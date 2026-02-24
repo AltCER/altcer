@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>АлтЦЭР — Система непрерывной диагностики трансформаторов</title>
+    <meta name="description" content="АлтЦЭР разрабатывает интеллектуальную систему непрерывной диагностики маслонаполненных трансформаторов. Проект поддержан Фондом содействия инновациям.">
+    <meta name="keywords" content="диагностика трансформаторов, мониторинг трансформаторов, энергетика, АлтЦЭР, фонд содействия инновациям">
+    <meta name="author" content="АлтЦЭР">
+
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --accent: #2563eb;
+            --light: #f1f5f9;
+            --dark: #0f172a;
+            --gray: #475569;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: white;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* HEADER */
+        header {
+            position: fixed;
+            width: 100%;
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        .fond-logo img {
+            height: 50px;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 100px 0 60px 0;
+        }
+
+        h2 {
+            font-size: 26px;
+            margin-bottom: 25px;
+            color: var(--primary);
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: var(--gray);
+        }
+
+        .news-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: var(--light);
+            border-left: 4px solid var(--accent);
+            border-radius: 6px;
+        }
+
+        .official-note {
+            background: #eef2ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .contacts {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* ANIMATION */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                margin: 5px 10px 0 0;
+            }
+
+            section {
+                padding: 120px 0 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-content">
+        <div class="logo">АлтЦЭР</div>
+
+        <nav>
+            <a href="#news">Новости</a>
+            <a href="#system">Разработка</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
+
+        <div class="fond-logo">
+            <img src="fond.png" alt="Фонд содействия инновациям">
+        </div>
+    </div>
+</header>
+
+<section id="news" class="fade-in">
+    <div class="container">
+        <h2>Новости проекта</h2>
+
+        <div class="news-item"><strong>2022</strong> — Формирование научно-технической идеи</div>
+        <div class="news-item"><strong>2023</strong> — Проведение лабораторных и опытных испытаний</div>
+        <div class="news-item"><strong>2025</strong> — Победа в программе «Студенческий стартап»</div>
+        <div class="news-item"><strong>2026</strong> — Выход продукта на рынок</div>
+
+        <div class="official-note">
+            Проект реализуется при поддержке Фонда содействия инновациям
+            в рамках программы развития технологического предпринимательства
+        </div>
+    </div>
+</section>
+
+<section id="system" class="fade-in">
+    <div class="container">
+        <h2>Система интеллектуального непрерывного мониторинга трансформаторов</h2>
+
+        <p>
+            Разрабатываемая система предназначена для круглосуточного контроля
+            технического состояния маслонаполненных силовых трансформаторов.
+        </p>
+
+        <p>
+            В рамках проекта реализуются:
+        </p>
+
+        <ul>
+            <li>Мониторинг параметров трансформаторного масла</li>
+            <li>Ранняя диагностика дефектов</li>
+            <li>Прогнозирование отказов</li>
+            <li>Интеграция в существующую инфраструктуру энергосистем</li>
+        </ul>
+
+        <p>
+            Внедрение системы позволяет повысить надежность энергоснабжения,
+            сократить эксплуатационные затраты и минимизировать аварийные риски.
+        </p>
+    </div>
+</section>
+
+<section id="contacts" class="fade-in">
+    <div class="container">
+        <h2>Контактная информация</h2>
+
+        <div class="contacts">
+            <p><strong>Организация:</strong> АлтЦЭР</p>
+            <p><strong>Email:</strong> info@altcer.ru</p>
+            <p><strong>Телефон:</strong> +7 (000) 000-00-00</p>
+            <p><strong>Адрес:</strong> Российская Федерация</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2026 АлтЦЭР. Проект поддержан Фондом содействия инновациям
+</footer>
+
+<script>
+    // Анимация появления при прокрутке
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    });
+
+    document.querySelectorAll('.fade-in').forEach(section => {
+        observer.observe(section);
+    });
+</script>
+
+</body>
+</html>
