@@ -56,9 +56,13 @@
         }
 
         .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            max-width: 200px;
         }
 
         nav a {
@@ -77,7 +81,38 @@
             height: 50px;
         }
 
-        /* SECTIONS */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 26px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(4px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(4px, -8px);
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
         section {
             padding: 100px 0 60px 0;
         }
@@ -137,22 +172,68 @@
         /* MOBILE */
         @media (max-width: 768px) {
             .header-content {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-
-            nav {
                 display: flex;
+                gap: 15px;
+                align-items: center;
+                padding: 15px 0;
                 flex-wrap: wrap;
             }
 
-            nav a {
-                margin: 5px 10px 0 0;
+            .hamburger {
+                display: flex;
+                order: 1;
+            }
+
+            .logo {
+                flex-shrink: 0;
+                order: 2;
+            }
+
+            .logo img {
+                max-width: 150px;
+            }
+
+            .fond-logo {
+                flex-shrink: 0;
+                margin-left: 0;
+                order: 3;
+            }
+
+            nav {
+                display: none;
             }
 
             section {
                 padding: 120px 0 60px 0;
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: white;
+                border-bottom: 1px solid #e2e8f0;
+                padding: 15px 20px;
+                gap: 10px;
+                width: 100%;
+                z-index: 999;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav a {
+                margin: 0;
+                padding: 10px 0;
+                border-bottom: 1px solid #e2e8f0;
+            }
+
+            nav a:last-child {
+                border-bottom: none;
             }
         }
     </style>
@@ -161,9 +242,9 @@
 
 <header>
     <div class="container header-content">
-        <div class="logo">АлтЦЭР</div>
+        <div class="logo"><img src="logo.png" alt="АлтЦЭР"></div>
 
-        <nav>
+        <nav class="nav-menu">
             <a href="#news">Новости</a>
             <a href="#system">Разработка</a>
             <a href="#contacts">Контакты</a>
@@ -171,6 +252,12 @@
 
         <div class="fond-logo">
             <img src="fond.png" alt="Фонд содействия инновациям">
+        </div>
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
     </div>
 </header>
@@ -223,10 +310,10 @@
         <h2>Контактная информация</h2>
 
         <div class="contacts">
-            <p><strong>Организация:</strong> АлтЦЭР</p>
-            <p><strong>Email:</strong> info@altcer.ru</p>
-            <p><strong>Телефон:</strong> +7 (000) 000-00-69</p>
-            <p><strong>Адрес:</strong> Российская Федерация</p>
+            <p><strong>Организация:</strong> ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "АЛТАЙСКИЙ ЦЕНТР ЭЛЕКТРОТЕХНИЧЕСКИХ РЕШЕНИЙ"</p>
+            <p><strong>Email:</strong> konev_em@mail.ru</p>
+            <p><strong>Телефон:</strong> +7 905 983-70-76</p>
+            <p>Алтайский край, г. Барнаул</p>
         </div>
     </div>
 </section>
@@ -236,6 +323,23 @@
 </footer>
 
 <script>
+    // Hamburger меню
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Закрытие меню при клике на ссылку
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+
     // Анимация появления при прокрутке
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
