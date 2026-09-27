@@ -114,7 +114,11 @@
         }
 
         section {
-            padding: 100px 0 60px 0;
+            padding: 70px 0 30px 0;
+        }
+
+        section:first-of-type {
+            padding-top: 120px;
         }
 
         h2 {
@@ -204,7 +208,11 @@
             }
 
             section {
-                padding: 120px 0 60px 0;
+                padding: 60px 0 25px 0;
+            }
+
+            section:first-of-type {
+                padding-top: 140px;
             }
 
             nav {
@@ -236,6 +244,128 @@
                 border-bottom: none;
             }
         }
+
+        /* COOPERATION SECTION */
+        .cooperation-box {
+            background: linear-gradient(135deg, #f8fbff 0%, #eef4ff 100%);
+            border: 1px solid #dbe7ff;
+            border-radius: 18px;
+            padding: 30px 30px 20px;
+            box-shadow: 0 10px 25px rgba(30, 58, 138, 0.07);
+        }
+
+        .cooperation-box h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .cooperation-box p,
+        .cooperation-box li {
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--dark);
+        }
+
+        .cooperation-box p {
+            margin-bottom: 18px;
+        }
+
+        .cooperation-box ol {
+            margin: 20px 0 25px 22px;
+            padding-left: 10px;
+        }
+
+        .cooperation-box li {
+            margin-bottom: 12px;
+            padding-left: 8px;
+        }
+
+        .cooperation-box .callout {
+            background: #ffffff;
+            border-left: 5px solid var(--accent);
+            padding: 18px 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .cooperation-box .callout strong {
+            color: var(--primary);
+        }
+
+        /* ABOUT SECTION */
+        .about-box {
+            background: linear-gradient(135deg, #f8fbff 0%, #eef4ff 100%);
+            border: 1px solid #dbe7ff;
+            border-radius: 18px;
+            padding: 26px 30px 18px;
+            box-shadow: 0 10px 25px rgba(30, 58, 138, 0.07);
+        }
+
+        .about-box h2 {
+            font-size: 32px;
+            margin-bottom: 18px;
+        }
+
+        .about-box p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--dark);
+            margin-bottom: 16px;
+        }
+
+        /* CONTACTS SECTION */
+        .contact-box {
+            background: linear-gradient(135deg, #f8fbff 0%, #eef4ff 100%);
+            border: 1px solid #dbe7ff;
+            border-radius: 18px;
+            padding: 26px 30px 18px;
+            box-shadow: 0 10px 25px rgba(30, 58, 138, 0.07);
+        }
+
+        .contact-box h2 {
+            font-size: 32px;
+            margin-bottom: 18px;
+        }
+
+        .contact-box p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .about-box,
+            .cooperation-box,
+            .contact-box {
+                padding: 22px 18px 18px;
+            }
+
+            .about-box h2,
+            .cooperation-box h2,
+            .contact-box h2 {
+                font-size: 26px;
+            }
+
+            .about-box p,
+            .cooperation-box p,
+            .cooperation-box li,
+            .cooperation-box .callout,
+            .contact-box p {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 60px 0 25px 0;
+            }
+
+            section:first-of-type {
+                padding-top: 140px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -245,9 +375,9 @@
         <div class="logo"><img src="logo.png" alt="АлтЦЭР"></div>
 
         <nav class="nav-menu">
-            <a href="#news">Новости</a>
-            <a href="#system">Разработка</a>
-            <a href="#contacts">Контакты</a>
+            <a href="#news">О нас</a>
+            <a href="#contacts">Сотрудничество</a>
+            <a href="#contact-info">Контакты</a>
         </nav>
 
         <div class="fond-logo">
@@ -263,50 +393,56 @@
 </header>
 
 <section id="news" class="fade-in">
-    <div class="container">
-        <h2>Новости проекта</h2>
-
-        <div class="news-item"><strong>2022</strong> — Формирование научно-технической идеи</div>
-        <div class="news-item"><strong>2023</strong> — Проведение лабораторных и опытных испытаний</div>
-        <div class="news-item"><strong>2025</strong> — Победа в программе «Студенческий стартап»</div>
-        <div class="news-item"><strong>2026</strong> — Выход продукта на рынок</div>
-
-        <div class="official-note">
-            Проект реализуется при поддержке Фонда содействия инновациям
-            в рамках программы развития технологического предпринимательства
-        </div>
-    </div>
-</section>
-
-<section id="system" class="fade-in">
-    <div class="container">
-        <h2>Система интеллектуального непрерывного мониторинга трансформаторов</h2>
+    <div class="container about-box">
+        <h2>О нас</h2>
 
         <p>
-            Разрабатываемая система предназначена для круглосуточного контроля
-            технического состояния маслонаполненных силовых трансформаторов.
+            ООО «АлтЦЭР» занимается разработкой, продажей и монтажом новой системы непрерывной
+            дистанционной диагностики маслонаполненных трансформаторов. Работа системы основана
+            на комплексном анализе параметров трансформатора и динамики их изменений в процессе
+            работы трансформатора.
         </p>
 
         <p>
-            В рамках проекта реализуются:
+            Применяемые решения позволят повысить надёжность электроснабжения и уберечь
+            оборудование от аварий. Установка оборудования, поставляемого ООО «АлтЦЭР»,
+            возможна как на новые трансформаторы, так и на трансформаторы, которые уже находятся
+            в эксплуатации.
         </p>
 
-        <ul>
-            <li>Мониторинг параметров трансформаторного масла</li>
-            <li>Ранняя диагностика дефектов</li>
-            <li>Прогнозирование отказов</li>
-            <li>Интеграция в существующую инфраструктуру энергосистем</li>
-        </ul>
+        <p>[Фото щита, будет немного позже]</p>
 
         <p>
-            Внедрение системы позволяет повысить надежность энергоснабжения,
-            сократить эксплуатационные затраты и минимизировать аварийные риски.
+            Проект реализуется при поддержке Фонда содействия инновациям в рамках программы
+            «Студенческий стартап».
         </p>
+
+        <img src="fond.png" alt="Фонд содействия инновациям" style="max-width: 260px; height: auto; display: block; margin: 12px auto 22px; border-radius: 12px; background: #fff; padding: 10px; border: 1px solid #dbe7ff;">
     </div>
 </section>
 
 <section id="contacts" class="fade-in">
-    <div class="container">
+    <div class="container cooperation-box">
+        <h2>Сотрудничество</h2>
+
+        <p>При обращении к нам вы получите:</p>
+
+        <ol>
+            <li>Помощь в формировании технического задания на разработку технического решения, включая все нюансы и особенности вашего проекта;</li>
+            <li>Полный комплект рабочей конструкторской документации с указанием всех параметров, изделий и материалов до начала производства работ, для утверждения и согласования решений;</li>
+            <li>Смонтированное и настроенное, сконфигурированное оборудование полной заводской готовности;</li>
+            <li>Также, возможен выезд специалистов ООО «АлтЦЭР» для проведения электромонтажных и пуско-наладочных работ на объекте.</li>
+        </ol>
+
+        <div class="callout">
+            <strong>Обращайтесь к нам</strong> — наши менеджеры помогут вам сформировать техническое задание,
+            а инженеры предложат техническое решение, которое подходит именно для вас.
+        </div>
+    </div>
+</section>
+
+<section id="contact-info" class="fade-in">
+    <div class="container contact-box">
         <h2>Контактная информация</h2>
 
         <div class="contacts">
