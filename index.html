@@ -56,16 +56,21 @@
         }
 
         .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 60px;
+            max-width: 200px;
         }
 
         nav a {
             margin-left: 20px;
             text-decoration: none;
             color: var(--dark);
-            font-weight: 500;
+            font-weight: 700;
+            font-size: 1.03rem;
             transition: 0.3s;
         }
 
@@ -77,9 +82,44 @@
             height: 50px;
         }
 
-        /* SECTIONS */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 26px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(4px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(4px, -8px);
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
         section {
-            padding: 100px 0 60px 0;
+            padding: 70px 0 30px 0;
+        }
+
+        section:first-of-type {
+            padding-top: 120px;
         }
 
         h2 {
@@ -102,7 +142,7 @@
         }
 
         .official-note {
-            background: #eef2ff;
+            background: var(--light);
             padding: 20px;
             border-radius: 8px;
             margin-top: 20px;
@@ -110,7 +150,6 @@
         }
 
         .contacts {
-            background: var(--light);
             padding: 20px;
             border-radius: 8px;
         }
@@ -137,22 +176,194 @@
         /* MOBILE */
         @media (max-width: 768px) {
             .header-content {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-
-            nav {
                 display: flex;
+                gap: 15px;
+                align-items: center;
+                padding: 15px 0;
                 flex-wrap: wrap;
             }
 
-            nav a {
-                margin: 5px 10px 0 0;
+            .hamburger {
+                display: flex;
+                order: 1;
+            }
+
+            .logo {
+                flex-shrink: 0;
+                order: 2;
+            }
+
+            .logo img {
+                max-width: 150px;
+            }
+
+            .fond-logo {
+                flex-shrink: 0;
+                margin-left: 0;
+                order: 3;
+            }
+
+            nav {
+                display: none;
             }
 
             section {
-                padding: 120px 0 60px 0;
+                padding: 60px 0 25px 0;
+            }
+
+            section:first-of-type {
+                padding-top: 140px;
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: white;
+                border-bottom: 1px solid #e2e8f0;
+                padding: 15px 20px;
+                gap: 10px;
+                width: 100%;
+                z-index: 999;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav a {
+                margin: 0;
+                padding: 10px 0;
+                border-bottom: 1px solid #e2e8f0;
+            }
+
+            nav a:last-child {
+                border-bottom: none;
+            }
+        }
+
+        /* COOPERATION SECTION */
+        .cooperation-box {
+            background: linear-gradient(135deg, #f8fbff 0%, #eef4ff 100%);
+            border: 1px solid #dbe7ff;
+            border-radius: 18px;
+            padding: 30px 30px 20px;
+            box-shadow: 0 10px 25px rgba(30, 58, 138, 0.07);
+        }
+
+        .cooperation-box h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .cooperation-box p,
+        .cooperation-box li {
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--dark);
+        }
+
+        .cooperation-box p {
+            margin-bottom: 18px;
+        }
+
+        .cooperation-box ol {
+            margin: 20px 0 25px 22px;
+            padding-left: 10px;
+        }
+
+        .cooperation-box li {
+            margin-bottom: 12px;
+            padding-left: 8px;
+        }
+
+        .cooperation-box .callout {
+            background: #ffffff;
+            border-left: 5px solid var(--accent);
+            padding: 18px 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .cooperation-box .callout strong {
+            color: var(--primary);
+        }
+
+        /* ABOUT SECTION */
+        .about-box {
+            background: linear-gradient(135deg, #f8fbff 0%, #eef4ff 100%);
+            border: 1px solid #dbe7ff;
+            border-radius: 18px;
+            padding: 26px 30px 18px;
+            box-shadow: 0 10px 25px rgba(30, 58, 138, 0.07);
+        }
+
+        .about-box h2 {
+            font-size: 32px;
+            margin-bottom: 18px;
+        }
+
+        .about-box p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--dark);
+            margin-bottom: 16px;
+        }
+
+        /* CONTACTS SECTION */
+        .contact-box {
+            background: linear-gradient(135deg, #f8fbff 0%, #eef4ff 100%);
+            border: 1px solid #dbe7ff;
+            border-radius: 18px;
+            padding: 26px 30px 18px;
+            box-shadow: 0 10px 25px rgba(30, 58, 138, 0.07);
+        }
+
+        .contact-box h2 {
+            font-size: 32px;
+            margin-bottom: 18px;
+        }
+
+        .contact-box p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .about-box,
+            .cooperation-box,
+            .contact-box {
+                padding: 22px 18px 18px;
+            }
+
+            .about-box h2,
+            .cooperation-box h2,
+            .contact-box h2 {
+                font-size: 26px;
+            }
+
+            .about-box p,
+            .cooperation-box p,
+            .cooperation-box li,
+            .cooperation-box .callout,
+            .contact-box p {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 60px 0 25px 0;
+            }
+
+            section:first-of-type {
+                padding-top: 140px;
             }
         }
     </style>
@@ -161,72 +372,84 @@
 
 <header>
     <div class="container header-content">
-        <div class="logo">АлтЦЭР</div>
+        <div class="logo"><img src="logo.png" alt="АлтЦЭР"></div>
 
-        <nav>
-            <a href="#news">Новости</a>
-            <a href="#system">Разработка</a>
-            <a href="#contacts">Контакты</a>
+        <nav class="nav-menu">
+            <a href="#news">О нас</a>
+            <a href="#contacts">Сотрудничество</a>
+            <a href="#contact-info">Контакты</a>
         </nav>
 
         <div class="fond-logo">
             <img src="fond.png" alt="Фонд содействия инновациям">
         </div>
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </div>
 </header>
 
 <section id="news" class="fade-in">
-    <div class="container">
-        <h2>Новости проекта</h2>
-
-        <div class="news-item"><strong>2022</strong> — Формирование научно-технической идеи</div>
-        <div class="news-item"><strong>2023</strong> — Проведение лабораторных и опытных испытаний</div>
-        <div class="news-item"><strong>2025</strong> — Победа в программе «Студенческий стартап»</div>
-        <div class="news-item"><strong>2026</strong> — Выход продукта на рынок</div>
-
-        <div class="official-note">
-            Проект реализуется при поддержке Фонда содействия инновациям
-            в рамках программы развития технологического предпринимательства
-        </div>
-    </div>
-</section>
-
-<section id="system" class="fade-in">
-    <div class="container">
-        <h2>Система интеллектуального непрерывного мониторинга трансформаторов</h2>
+    <div class="container about-box">
+        <h2>О нас</h2>
 
         <p>
-            Разрабатываемая система предназначена для круглосуточного контроля
-            технического состояния маслонаполненных силовых трансформаторов.
+            ООО «АлтЦЭР» занимается разработкой, продажей и монтажом новой системы непрерывной
+            дистанционной диагностики маслонаполненных трансформаторов. Работа системы основана
+            на комплексном анализе параметров трансформатора и динамики их изменений в процессе
+            работы трансформатора.
         </p>
 
         <p>
-            В рамках проекта реализуются:
+            Применяемые решения позволят повысить надёжность электроснабжения и уберечь
+            оборудование от аварий. Установка оборудования, поставляемого ООО «АлтЦЭР»,
+            возможна как на новые трансформаторы, так и на трансформаторы, которые уже находятся
+            в эксплуатации.
         </p>
 
-        <ul>
-            <li>Мониторинг параметров трансформаторного масла</li>
-            <li>Ранняя диагностика дефектов</li>
-            <li>Прогнозирование отказов</li>
-            <li>Интеграция в существующую инфраструктуру энергосистем</li>
-        </ul>
+        <p>[Фото щита, будет немного позже]</p>
 
         <p>
-            Внедрение системы позволяет повысить надежность энергоснабжения,
-            сократить эксплуатационные затраты и минимизировать аварийные риски.
+            Проект реализуется при поддержке Фонда содействия инновациям в рамках программы
+            «Студенческий стартап».
         </p>
+
+        <img src="fond.png" alt="Фонд содействия инновациям" style="max-width: 260px; height: auto; display: block; margin: 12px auto 22px; border-radius: 12px; background: #fff; padding: 10px; border: 1px solid #dbe7ff;">
     </div>
 </section>
 
 <section id="contacts" class="fade-in">
-    <div class="container">
+    <div class="container cooperation-box">
+        <h2>Сотрудничество</h2>
+
+        <p>При обращении к нам вы получите:</p>
+
+        <ol>
+            <li>Помощь в формировании технического задания на разработку технического решения, включая все нюансы и особенности вашего проекта;</li>
+            <li>Полный комплект рабочей конструкторской документации с указанием всех параметров, изделий и материалов до начала производства работ, для утверждения и согласования решений;</li>
+            <li>Смонтированное и настроенное, сконфигурированное оборудование полной заводской готовности;</li>
+            <li>Также, возможен выезд специалистов ООО «АлтЦЭР» для проведения электромонтажных и пуско-наладочных работ на объекте.</li>
+        </ol>
+
+        <div class="callout">
+            <strong>Обращайтесь к нам</strong> — наши менеджеры помогут вам сформировать техническое задание,
+            а инженеры предложат техническое решение, которое подходит именно для вас.
+        </div>
+    </div>
+</section>
+
+<section id="contact-info" class="fade-in">
+    <div class="container contact-box">
         <h2>Контактная информация</h2>
 
         <div class="contacts">
-            <p><strong>Организация:</strong> АлтЦЭР</p>
-            <p><strong>Email:</strong> info@altcer.ru</p>
-            <p><strong>Телефон:</strong> +7 (000) 000-00-69</p>
-            <p><strong>Адрес:</strong> Российская Федерация</p>
+            <p><strong>Организация:</strong> ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "АЛТАЙСКИЙ ЦЕНТР ЭЛЕКТРОТЕХНИЧЕСКИХ РЕШЕНИЙ"</p>
+            <p><strong>Email:</strong> konev_em@mail.ru</p>
+            <p><strong>Телефон:</strong> +7 905 983-70-76</p>
+            <p>Алтайский край, г. Барнаул</p>
         </div>
     </div>
 </section>
@@ -236,6 +459,23 @@
 </footer>
 
 <script>
+    // Hamburger меню
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Закрытие меню при клике на ссылку
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+
     // Анимация появления при прокрутке
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
